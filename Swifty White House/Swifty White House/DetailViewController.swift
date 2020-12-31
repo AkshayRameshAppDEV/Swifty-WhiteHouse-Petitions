@@ -26,6 +26,8 @@ class DetailViewController: UIViewController {
             <style> body { font-size: 150%; } </style>
             </head>
             <body>
+            <h4>\(detailItem.title)</h4>
+            <h4>Signature Count: \(detailItem.signatureCount)</h4>
             \(detailItem.body)
             </body>
             </html>

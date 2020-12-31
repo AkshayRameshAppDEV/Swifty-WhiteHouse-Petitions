@@ -13,6 +13,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showCredits))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(filterPetitions))
         if navigationController?.tabBarItem.tag == 0 {
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         } else {
@@ -21,9 +23,34 @@ class ViewController: UITableViewController {
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
                 parse(json: data)
+                return
             }
         }
         showError()
+    }
+    
+    @objc func filterPetitions() {
+        let petitionsController = UIAlertController(title: "Filter Petitions", message: "Enter a string to display petitions related to the string", preferredStyle: .alert)
+        petitionsController.addTextField()
+        let addAction = UIAlertAction(title: "Filter", style: .default) { [weak self, weak petitionsController] _ in
+            guard let petition = petitionsController?.textFields?[0].text else { return }
+            self?.filter(petition)
+        }
+        petitionsController.addAction(addAction)
+        present(petitionsController, animated: true)
+    }
+    
+    func filter(_ petition: String) {
+        petitions = petitions.filter { word in
+            return word.title.contains(petition)
+        }
+        tableView.reloadData()
+    }
+    
+    @objc func showCredits() {
+        let ac = UIAlertController(title: "Credits", message: "The petitions data comes from the We The People API of the Whitehouse", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
     func showError() {
