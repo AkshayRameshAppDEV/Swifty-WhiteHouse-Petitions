@@ -15,6 +15,7 @@
 		B9A84ECB259D43C5006EACC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A84EC9259D43C5006EACC5 /* LaunchScreen.storyboard */; };
 		B9A84ED4259D513A006EACC5 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A84ED3259D513A006EACC5 /* Petition.swift */; };
 		B9A84ED7259D51F5006EACC5 /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A84ED6259D51F5006EACC5 /* Petitions.swift */; };
+		B9A84EDA259D7116006EACC5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A84ED9259D7116006EACC5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B9A84ECC259D43C5006EACC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9A84ED3259D513A006EACC5 /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		B9A84ED6259D51F5006EACC5 /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		B9A84ED9259D7116006EACC5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				B9A84ECC259D43C5006EACC5 /* Info.plist */,
 				B9A84ED3259D513A006EACC5 /* Petition.swift */,
 				B9A84ED6259D51F5006EACC5 /* Petitions.swift */,
+				B9A84ED9259D7116006EACC5 /* DetailViewController.swift */,
 			);
 			path = "Swifty White House";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				B9A84EC3259D43C4006EACC5 /* ViewController.swift in Sources */,
 				B9A84ED4259D513A006EACC5 /* Petition.swift in Sources */,
 				B9A84EBF259D43C4006EACC5 /* AppDelegate.swift in Sources */,
+				B9A84EDA259D7116006EACC5 /* DetailViewController.swift in Sources */,
 				B9A84EC1259D43C4006EACC5 /* SceneDelegate.swift in Sources */,
 				B9A84ED7259D51F5006EACC5 /* Petitions.swift in Sources */,
 			);
