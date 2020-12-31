@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UITableViewController {
     var petitions = [Petition]()
+    var defaultPetitions = [Petition]()
+    var filterPetitionsArr = [Petition]()
     var urlString: String = ""
     
     override func viewDidLoad() {
@@ -41,9 +43,13 @@ class ViewController: UITableViewController {
     }
     
     func filter(_ petition: String) {
-        petitions = petitions.filter { word in
-            return word.title.contains(petition)
+        filterPetitionsArr.removeAll()
+        for p in defaultPetitions {
+            if p.title.contains(petition) {
+                filterPetitionsArr.append(p)
+            }
         }
+        petitions = filterPetitionsArr
         tableView.reloadData()
     }
     
@@ -64,6 +70,7 @@ class ViewController: UITableViewController {
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonPetitions.results
             tableView.reloadData()
+            defaultPetitions = petitions
         }
     }
     
