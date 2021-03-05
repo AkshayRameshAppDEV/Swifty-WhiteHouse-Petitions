@@ -47,14 +47,19 @@ class ViewController: UITableViewController {
     }
     
     func filter(_ petition: String) {
-        filterPetitionsArr.removeAll()
-        for p in defaultPetitions {
-            if p.title.contains(petition) {
-                filterPetitionsArr.append(p)
+        DispatchQueue.global().async {
+            self.filterPetitionsArr.removeAll()
+            for p in self.defaultPetitions {
+                if p.title.contains(petition) {
+                    self.filterPetitionsArr.append(p)
+                }
+            }
+            self.petitions = self.filterPetitionsArr
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-        petitions = filterPetitionsArr
-        tableView.reloadData()
     }
     
     @objc func showCredits() {
